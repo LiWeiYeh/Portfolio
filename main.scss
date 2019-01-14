@@ -1,10 +1,24 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
+//variables
+$vendors: (
+  '-webkit-', '-moz-', '-ms-', '-o-', ''
+);
 $font-raleway: 'Raleway', sans-serif;
 $font-inconsalita: 'Inconsalita', monospace;
+$grey: rgb(177, 173, 173);
 
-@-webkit-keyframes typing { from { width: 0; } }
-@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+//mixins
+@mixin prefix($prop, $val) {
+  @each $vendor in $vendors {
+    #{$vendor}#{$prop}: $val;
+  }
+}
+
+
+
+@keyframes typing { from { width: 0; } }
+@keyframes blink-caret { 50% { border-color: transparent; } }
 
 body {
   font-family: $font-raleway;
@@ -15,12 +29,21 @@ body {
       margin: 10px;
       font-size: 1.4vw;
       font-weight: 700;
-      color: rgb(177, 173, 173);
+      color: $grey;
+    }
+  }
+
+  #navlogo {
+    padding-top: 50%;
+    .logo {
+      font-size: 3vw;
+      padding: 10%;
+      color: $grey;
     }
   }
 
   #intro {
-    background-image: url("https://wallpaper.wiki/wp-content/uploads/2017/05/Black-White-HD-City-Wallpapers-001.jpg");
+    background-image: url("img/Black-White-City.jpg");
     background-size: cover;
     #intro-content {
       .row{
@@ -29,7 +52,7 @@ body {
         width: 100%;
         #intro-text {
           position: relative;
-          top: 50%;
+          top: 40%;
           -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
           transform: translateY(-60%);
@@ -38,8 +61,8 @@ body {
             width: 18.5ch;
             white-space: nowrap;
             overflow: hidden;
-            -webkit-animation: typing 2.5s steps(20, end),
-                      blink-caret .5s step-end infinite alternate;
+            @include prefix(animation, (typing 2.5s steps(20, end),
+                                       blink-caret .5s step-end infinite alternate))
           }
         }
       }
@@ -87,4 +110,8 @@ h4 {
 
 .center-horizontal {
   margin: 0 auto;
+}
+
+.z-index-max {
+  z-index: 999;
 }

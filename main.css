@@ -9511,11 +9511,21 @@ h3 {
     border-color: #dee2e6;
   }
 }
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@-webkit-keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
 body {
   font-family: "Raleway", sans-serif;
   overflow-x: hidden;
 }
-body a {
+body #navbar a {
   margin: 10px;
   font-size: 1.4vw;
   font-weight: 700;
@@ -9525,8 +9535,37 @@ body #intro {
   background-image: url("https://wallpaper.wiki/wp-content/uploads/2017/05/Black-White-HD-City-Wallpapers-001.jpg");
   background-size: cover;
 }
+body #intro #intro-content .row {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+body #intro #intro-content .row #intro-text {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-60%);
+}
+body #intro #intro-content .row #intro-text #intro-name {
+  border-right: 0.1em solid white;
+  width: 18.5ch;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: typing 2.5s steps(20, end), blink-caret 0.5s step-end infinite alternate;
+}
 
-.darken-overlay div {
+h1 {
+  font-size: 5vw;
+  font-family: "Inconsalita", monospace;
+}
+
+h4 {
+  font-size: 1.8vw;
+  font-family: "Inconsalita", monospace;
+}
+
+.darken-overlay .darkened-div {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -9534,6 +9573,18 @@ body #intro {
 
 .bg-black {
   background-color: #141414;
+}
+
+.bg-red {
+  background: red;
+}
+
+.h-0 {
+  height: 0%;
+}
+
+.center-horizontal {
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */

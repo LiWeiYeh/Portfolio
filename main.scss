@@ -1,38 +1,90 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
-$font: 'Raleway', sans-serif;
+$font-raleway: 'Raleway', sans-serif;
+$font-inconsalita: 'Inconsalita', monospace;
+
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
 
 body {
-  font-family: $font;
+  font-family: $font-raleway;
   overflow-x: hidden;
-  a {
-    margin: 10px;
-    font-size: 1.4vw;
-    font-weight: 700;
-    color: rgb(177, 173, 173);
+
+  #navbar {
+    a {
+      margin: 10px;
+      font-size: 1.4vw;
+      font-weight: 700;
+      color: rgb(177, 173, 173);
+    }
   }
 
   #intro {
     background-image: url("https://wallpaper.wiki/wp-content/uploads/2017/05/Black-White-HD-City-Wallpapers-001.jpg");
     background-size: cover;
+    #intro-content {
+      .row{
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        #intro-text {
+          position: relative;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-60%);
+          #intro-name {
+            border-right: .1em solid white;
+            width: 18.5ch;
+            white-space: nowrap;
+            overflow: hidden;
+            -webkit-animation: typing 2.5s steps(20, end),
+                      blink-caret .5s step-end infinite alternate;
+          }
+        }
+      }
+    }
   }
-
-
 }
 
+
+
+// change preset elements
+h1 {
+  font-size: 5.0vw;
+  font-family: $font-inconsalita;
+}
+
+h4 {
+  font-size: 1.8vw;
+  font-family: $font-inconsalita;
+}
 
 
 
 // global usage
 .darken-overlay {
-  div {
+  .darkened-div {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
 }
 
-// bootstrap-styled custom stuff
+
+
+// bootstrap-like custom css
 .bg-black {
   background-color: rgb(20, 20, 20);
+}
+.bg-red {
+  background: red;
+}
+
+.h-0 {
+  height: 0%;
+}
+
+.center-horizontal {
+  margin: 0 auto;
 }

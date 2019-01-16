@@ -75,7 +75,7 @@ body {
             width: 18.5ch;
             white-space: nowrap;
             overflow: hidden;
-            @include prefix(animation, (typing 2.5s steps(20, end),
+            @include prefix(animation, (typing 2.5s steps(15, end),
                                        blink-caret .5s step-end infinite alternate));
           }
         }
@@ -85,7 +85,6 @@ body {
 
   #main {
     #about-me {
-      margin-top: 4em;
       #about-me-intro {
         margin: 2%;
         overflow: hidden;
@@ -145,7 +144,7 @@ h5 {
   font-size: 1.2em;
 }
 p {
-  font-size: 1.5em;
+  font-size: 1.0em;
 }
 
 // global usage
@@ -172,9 +171,4 @@ p {
 }
 .list-style-type-none {
   list-style-type: none;
-}
-
-// testing purposes
-.bg-red {
-  background: red;
 }

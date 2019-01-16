@@ -9581,14 +9581,11 @@ body #intro #intro-content .row #intro-text #intro-name {
   width: 18.5ch;
   white-space: nowrap;
   overflow: hidden;
-  -webkit-animation: typing 2.5s steps(20, end), blink-caret 0.5s step-end infinite alternate;
-  -moz-animation: typing 2.5s steps(20, end), blink-caret 0.5s step-end infinite alternate;
-  -ms-animation: typing 2.5s steps(20, end), blink-caret 0.5s step-end infinite alternate;
-  -o-animation: typing 2.5s steps(20, end), blink-caret 0.5s step-end infinite alternate;
-  animation: typing 2.5s steps(20, end), blink-caret 0.5s step-end infinite alternate;
-}
-body #main #about-me {
-  margin-top: 4em;
+  -webkit-animation: typing 2.5s steps(15, end), blink-caret 0.5s step-end infinite alternate;
+  -moz-animation: typing 2.5s steps(15, end), blink-caret 0.5s step-end infinite alternate;
+  -ms-animation: typing 2.5s steps(15, end), blink-caret 0.5s step-end infinite alternate;
+  -o-animation: typing 2.5s steps(15, end), blink-caret 0.5s step-end infinite alternate;
+  animation: typing 2.5s steps(15, end), blink-caret 0.5s step-end infinite alternate;
 }
 body #main #about-me #about-me-intro {
   margin: 2%;
@@ -9646,7 +9643,7 @@ h5 {
 }
 
 p {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .darken-overlay .darkened-div {
@@ -9673,10 +9670,6 @@ p {
 
 .list-style-type-none {
   list-style-type: none;
-}
-
-.bg-red {
-  background: red;
 }
 
 /*# sourceMappingURL=main.css.map */

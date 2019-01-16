@@ -7,6 +7,8 @@ $vendors: (
 $font-raleway: 'Raleway', sans-serif;
 $font-inconsalita: 'Inconsalita', monospace;
 $grey: rgb(177, 173, 173);
+$darkgrey: #888;
+$black: rgb(20, 20, 20);
 
 //mixins
 @mixin prefix($prop, $val) {
@@ -23,23 +25,37 @@ $grey: rgb(177, 173, 173);
 body {
   font-family: $font-raleway;
   overflow-x: hidden;
-
+  
   #navbar {
     a {
       margin: 10px;
-      font-size: 1.4vw;
+      font-size: 1.4em;
       font-weight: 700;
       color: $grey;
+      @include prefix(transition, color 0.2s ease-out);
+    }
+    a:hover {
+      color: whitesmoke;
     }
   }
 
-  #navlogo {
+  #navlogos {
     padding-top: 50%;
-    .logo {
-      font-size: 3vw;
-      padding: 10%;
-      color: $grey;
+    a {
+      .nav-logo {
+        font-size: 3em;
+        margin: 10%;
+        color: $grey;
+        @include prefix(transition, color 0.2s ease-out);
+      }
+      .nav-logo:hover {
+        color: whitesmoke;
+      }
     }
+    a:hover {
+      text-decoration: none;
+    }
+
   }
 
   #intro {
@@ -53,16 +69,55 @@ body {
         #intro-text {
           position: relative;
           top: 40%;
-          -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-          transform: translateY(-60%);
+          @include prefix(transform, translateY(-60%));
           #intro-name {
             border-right: .1em solid white;
             width: 18.5ch;
             white-space: nowrap;
             overflow: hidden;
             @include prefix(animation, (typing 2.5s steps(20, end),
-                                       blink-caret .5s step-end infinite alternate))
+                                       blink-caret .5s step-end infinite alternate));
+          }
+        }
+      }
+    }
+  }
+
+  #main {
+    #about-me {
+      margin-top: 4em;
+      #about-me-intro {
+        margin: 2%;
+        overflow: hidden;
+        img {
+          margin: 2%;
+          border-radius: 50%;
+          height: 7.5em;
+          float: left;
+        }
+        p {
+          margin: 2%;
+          font-size: 1.7em;
+          color: $darkgrey;
+        }
+      }
+      #about-me-skills {
+        .about-me-skills-logos {
+          p{
+            font-size: 1em;
+          }
+          a {
+            i {
+              font-size: 2.0em;
+              color: $black;
+              @include prefix(transition, color 0.2s ease-out);
+            }
+            i:hover {
+              color: $grey;
+            }
+          }
+          a:hover {
+            text-decoration: none;
           }
         }
       }
@@ -74,16 +129,24 @@ body {
 
 // change preset elements
 h1 {
-  font-size: 5.0vw;
-  font-family: $font-inconsalita;
+  font-size: 5.0em;
 }
-
+h2 {
+  font-size: 3.9em;
+}
+h3 {
+  font-size: 2.8em;
+  text-align: center;
+}
 h4 {
-  font-size: 1.8vw;
-  font-family: $font-inconsalita;
+  font-size: 1.7em;
 }
-
-
+h5 {
+  font-size: 1.2em;
+}
+p {
+  font-size: 1.5em;
+}
 
 // global usage
 .darken-overlay {
@@ -93,25 +156,25 @@ h4 {
     background-color: rgba(0, 0, 0, 0.5);
   }
 }
-
-
+.font-inconsalita {
+  font-family: $font-inconsalita;
+}
 
 // bootstrap-like custom css
 .bg-black {
-  background-color: rgb(20, 20, 20);
+  background-color: $black;
 }
-.bg-red {
-  background: red;
-}
-
 .h-0 {
   height: 0%;
 }
-
-.center-horizontal {
-  margin: 0 auto;
-}
-
 .z-index-max {
   z-index: 999;
+}
+.list-style-type-none {
+  list-style-type: none;
+}
+
+// testing purposes
+.bg-red {
+  background: red;
 }

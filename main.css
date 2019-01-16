@@ -9664,6 +9664,10 @@ p {
   height: 0%;
 }
 
+.h-40 {
+  height: 40%;
+}
+
 .z-index-max {
   z-index: 999;
 }

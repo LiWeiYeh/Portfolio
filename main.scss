@@ -25,7 +25,6 @@ $black: rgb(20, 20, 20);
 body {
   font-family: $font-raleway;
   overflow-x: hidden;
-  
   #navbar {
     a {
       margin: 10px;
@@ -100,6 +99,11 @@ body {
           color: $darkgrey;
         }
       }
+      #about-me-profile {
+        p {
+          margin: .4em;
+        }
+      }
       #about-me-skills {
         .about-me-skills-logos {
           p{
@@ -120,6 +124,12 @@ body {
           }
         }
       }
+    }
+  }
+
+  footer {
+    i {
+      font-size: 4em;
     }
   }
 }
@@ -159,7 +169,15 @@ p {
   font-family: $font-inconsalita;
 }
 
-// bootstrap-like custom css
+.text-whitesmoke {
+  color: whitesmoke;
+}
+.text-grey {
+  color: $grey;
+}
+.text-darkgrey {
+  color: $darkgrey;
+}
 .bg-black {
   background-color: $black;
 }

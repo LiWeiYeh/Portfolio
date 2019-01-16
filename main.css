@@ -9602,6 +9602,9 @@ body #main #about-me #about-me-intro p {
   font-size: 1.7em;
   color: #888;
 }
+body #main #about-me #about-me-profile p {
+  margin: 0.4em;
+}
 body #main #about-me #about-me-skills .about-me-skills-logos p {
   font-size: 1em;
 }
@@ -9619,6 +9622,9 @@ body #main #about-me #about-me-skills .about-me-skills-logos a i:hover {
 }
 body #main #about-me #about-me-skills .about-me-skills-logos a:hover {
   text-decoration: none;
+}
+body footer i {
+  font-size: 4em;
 }
 
 h1 {
@@ -9654,6 +9660,18 @@ p {
 
 .font-inconsalita {
   font-family: "Inconsalita", monospace;
+}
+
+.text-whitesmoke {
+  color: whitesmoke;
+}
+
+.text-grey {
+  color: #b1adad;
+}
+
+.text-darkgrey {
+  color: #888;
 }
 
 .bg-black {
